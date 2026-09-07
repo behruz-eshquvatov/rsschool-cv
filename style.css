@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1e1e2e;
+  background-color: #f5f5fa;
+}
+
+a {
+  color: #5b6af0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Layout wrapper ===== */
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Header — fixed sticky ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  border-bottom: 3px solid #5b6af0;
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Wrapper centers everything inside header */
+.header-inner-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: flex-direction 0.3s ease;
+}
+
+/* Default: avatar + name in a row, nav below */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  transition: margin-bottom 0.3s ease, gap 0.3s ease;
+}
+
+.header-text {
+  overflow: hidden;
+  max-height: 200px;
+  opacity: 1;
+  transition: opacity 0.25s ease, max-height 0.3s ease;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #5b6af0;
+  flex-shrink: 0;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2a2a4a;
+}
+
+.tagline {
+  color: #666;
+  font-size: 1rem;
+}
+.tagline span{
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-transform: lowercase;
+  background: #2a2a4a;
+  line-height: 1.4;
+  color: #cdd6f4;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5b6af0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #eef0ff;
+  text-decoration: none;
+}
+
+/* ===== Scrolled (compact) state ===== */
+header.scrolled {
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.13);
+}
+
+/* Switch wrap to a single horizontal row: [small avatar] [nav links] */
+header.scrolled .header-inner-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* header-inner only wraps the avatar now — don't let it stretch full width */
+header.scrolled .header-inner {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+/* Hide name + tagline */
+header.scrolled .header-text {
+  display: none;
+}
+
+/* Shrink avatar */
+header.scrolled .avatar {
+  width: 40px;
+  height: 40px;
+}
+
+/* Nav takes all remaining space, links sit beside the avatar */
+header.scrolled nav {
+  flex: 1 1 auto;
+  padding: 0;
+}
+
+/* ===== Main — offset so content isn't hidden under fixed header ===== */
+main {
+  padding-top: 220px;
+  padding-bottom: 3rem;
+}
+
+/* ===== Sections ===== */
+section {
+  margin-bottom: 2.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #5b6af0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #eef0ff;
+}
+
+.anchor {
+  font-size: 1.4rem;
+  color: #b0b8ff;
+  text-decoration: none;
+  margin-left: 0;
+  margin-right: 0.15rem;
+  transition: color 0.2s;
+}
+
+.anchor:hover {
+  color: #5b6af0;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: #2a2a4a;
+  margin-bottom: 0.4rem;
+}
+
+p + p {
+  margin-top: 0.75rem;
+}
+
+/* ===== Contacts ===== */
+.contacts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-label {
+  display: inline-block;
+  width: 90px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== Skills ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.skill-group ul li {
+  font-size: 0.92rem;
+  color: #333;
+}
+
+/* ===== Experience ===== */
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job time {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.job p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ===== Projects ===== */
+.projects-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-price {
+  display: inline-block;
+  margin-left: 0.4rem;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 12px;
+}
+
+/* ===== Code Example ===== */
+pre {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+}
+
+/* ===== Education ===== */
+.education-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-list li {
+  padding-left: 1rem;
+  border-left: 3px solid #5b6af0;
+}
+
+.education-list time {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ===== Languages ===== */
+.lang-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  max-width: 100%;
+  background-color: #2a2a4a;
+  color: #ccc;
+  padding: 1.25rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-github {
+  color: #a0b0ff;
+}
+
+.footer-year {
+  font-size: 0.9rem;
+}
+
+.rs-logo {
+  height: 36px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Increase offset for taller mobile header */
+  main {
+    padding-top: 400px;
+  }
+
+  /* Mobile: header-inner slides up and disappears on scroll */
+  .header-inner {
+    transition: transform 0.35s ease, opacity 0.35s ease, max-height 0.35s ease;
+    transform: translateY(0);
+    opacity: 1;
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  header.scrolled .header-inner {
+    transform: translateY(-100%);
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+    flex: none;
+  }
+
+  /* On mobile scrolled: wrap goes back to column, nav takes full width */
+  header.scrolled .header-inner-wrap {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  header.scrolled nav {
+    padding: 0;
+    width: 100%;
+  }
+
+  header.scrolled {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+}
