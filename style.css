@@ -1,0 +1,295 @@
+﻿/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1e1e2e;
+  background-color: #f5f5fa;
+}
+
+a {
+  color: #5b6af0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Layout wrapper ===== */
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #fff;
+  border-bottom: 3px solid #5b6af0;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  max-width: 100%;
+}
+
+header > * {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #5b6af0;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2a2a4a;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* ===== Navigation ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0;
+}
+
+nav ul li a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #5b6af0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: #eef0ff;
+  text-decoration: none;
+}
+
+/* ===== Main ===== */
+main {
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+/* ===== Sections ===== */
+section {
+  margin-bottom: 2.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #5b6af0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #eef0ff;
+}
+
+h3 {
+  font-size: 1.05rem;
+  color: #2a2a4a;
+  margin-bottom: 0.4rem;
+}
+
+p + p {
+  margin-top: 0.75rem;
+}
+
+/* ===== Contacts ===== */
+.contacts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-label {
+  display: inline-block;
+  width: 90px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== Skills ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.skill-group ul li {
+  font-size: 0.92rem;
+  color: #333;
+}
+
+/* ===== Experience ===== */
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job time {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.3rem;
+}
+
+.job p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ===== Projects ===== */
+.projects-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ===== Code Example ===== */
+pre {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+}
+
+/* ===== Education ===== */
+.education-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-list li {
+  padding-left: 1rem;
+  border-left: 3px solid #5b6af0;
+}
+
+.education-list time {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ===== Languages ===== */
+.lang-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  max-width: 100%;
+  background-color: #2a2a4a;
+  color: #ccc;
+  padding: 1.25rem 1.5rem;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-github {
+  color: #a0b0ff;
+}
+
+.footer-year {
+  font-size: 0.9rem;
+}
+
+.rs-logo {
+  height: 36px;
+  width: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
